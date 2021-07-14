@@ -1,4 +1,4 @@
-import 'after_used/result.dart';
+import 'result.dart';
 
 void main(List<String> args) {
   final fakeWidget = widgetBuilderAfter(Result.loaded(42));
