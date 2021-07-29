@@ -13,7 +13,6 @@ class ResponsiveSafeArea extends StatelessWidget {
         super(key: key);
 
   final ResponsiveBuilder responsiveBuilder;
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(

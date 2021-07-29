@@ -48,6 +48,7 @@ dependencies:
 
 #sum_of_types
   sum_types: ^0.3.0
+  flutter_hooks: ^0.18.0
 
 
 dev_dependencies:
