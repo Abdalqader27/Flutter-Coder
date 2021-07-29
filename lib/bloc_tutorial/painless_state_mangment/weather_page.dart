@@ -9,8 +9,9 @@ class WeatherPage extends StatefulWidget {
   _WeatherPageState createState() => _WeatherPageState();
 }
 
+final weatherBloc = WeatherBloc();
+
 class _WeatherPageState extends State<WeatherPage> {
-  final weatherBloc = WeatherBloc();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,11 +117,9 @@ class _CityInputFieldState extends State<CityInputField> {
   }
 
   void submitCityName(String cityName) {
-    void submitCityName(String cityName) {
-      // Get the Bloc using the BlocProvider
-      final weatherBloc = BlocProvider.of<WeatherBloc>(context);
-      // Initiate getting the weather
-      weatherBloc.add(GetWeather(cityName));
-    }
+    // Get the Bloc using the BlocProvider
+    // final weatherBloc = BlocProvider.of<WeatherBloc>(context);
+    // Initiate getting the weather
+    weatherBloc.add(GetWeather(cityName));
   }
 }

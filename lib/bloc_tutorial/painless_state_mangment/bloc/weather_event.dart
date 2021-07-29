@@ -10,5 +10,5 @@ abstract class WeatherEvent extends Equatable {
 class GetWeather extends WeatherEvent {
   final cityName;
 
-  GetWeather(this.cityName) : super(cityName);
+  GetWeather(this.cityName);
 }
