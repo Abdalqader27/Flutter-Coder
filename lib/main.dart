@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'flutter_hooks_example/life_with_hooks.dart';
+import 'bloc_tutorial/painless_state_mangment/weather_page.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: HomePageHooks(),
+    home: WeatherPage(),
   ));
 }
