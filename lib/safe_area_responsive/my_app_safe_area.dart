@@ -18,11 +18,11 @@ class MyApp extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     "Let's get",
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.headline1,
                   ),
                   Text(
                     "RESPONSIVE",
-                    style: Theme.of(context).textTheme.display3,
+                    style: Theme.of(context).textTheme.bodyText2,
                   ),
                 ],
               ),
