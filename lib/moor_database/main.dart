@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../flutter_hooks_example/life_without_hooks.dart';
+
+import 'page/home_page.dart';
 
 void main() {
-  runApp(const MaterialApp(home: HomePage()));
+  runApp(const MaterialApp(
+    home: HomePage(),
+  ));
 }
