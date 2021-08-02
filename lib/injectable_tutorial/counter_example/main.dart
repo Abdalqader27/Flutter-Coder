@@ -9,10 +9,12 @@ void main() {
   // Environment.dev
   configureDependencies();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         create: (_) => CounterChangeNotifier(
           getIt(instanceName: 'DevCounterRepository'),
         ),
-        child: CounterPage(),
+        child: const CounterPage(),
       ),
     );
   }

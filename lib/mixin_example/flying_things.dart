@@ -1,18 +1,20 @@
+import 'package:flutter/cupertino.dart';
+
 mixin Fluttering {
   void flutter() {
-    print('fluttering');
+    debugPrint('fluttering');
   }
 }
 
 abstract class Insect {
   void crawl() {
-    print('crawling');
+    debugPrint('crawling');
   }
 }
 
 abstract class AirborneInsect extends Insect with Fluttering {
   void buzz() {
-    print('buzzing annoyingly');
+    debugPrint('buzzing annoyingly');
   }
 }
 
@@ -21,13 +23,13 @@ class Mosquito extends AirborneInsect {
     crawl();
     flutter();
     buzz();
-    print('sucking blood');
+    debugPrint('sucking blood');
   }
 }
 
 abstract class Bird with Fluttering {
   void chirp() {
-    print('chirp chirp');
+    debugPrint('chirp chirp');
   }
 }
 
@@ -35,6 +37,6 @@ class Swallow extends Bird {
   void doSwallowThing() {
     chirp();
     flutter();
-    print('eating a mosquito');
+    debugPrint('eating a mosquito');
   }
 }

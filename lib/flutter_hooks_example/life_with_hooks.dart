@@ -3,6 +3,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class HomePageHooks extends HookWidget {
+  const HomePageHooks({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final hideFabAnimController = useAnimationController(
@@ -12,7 +14,7 @@ class HomePageHooks extends HookWidget {
     final scrollController = useScrollControllerForAnimation(hideFabAnimController);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Let's Scroll"),
+        title: const Text("Let's Scroll"),
       ),
       floatingActionButton: FadeTransition(
         opacity: hideFabAnimController,
@@ -28,7 +30,7 @@ class HomePageHooks extends HookWidget {
       body: ListView(
         controller: scrollController,
         children: <Widget>[
-          for (int i = 0; i < 5; i++) Card(child: FittedBox(child: FlutterLogo())),
+          for (int i = 0; i < 5; i++) const Card(child: FittedBox(child: FlutterLogo())),
         ],
       ),
     );

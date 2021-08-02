@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import 'counter_change_notifier.dart';
 
 class CounterPage extends StatefulWidget {
+  const CounterPage({Key? key}) : super(key: key);
+
   @override
   _CounterPageState createState() => _CounterPageState();
 }
@@ -13,13 +15,13 @@ class _CounterPageState extends State<CounterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Counter App 💉'),
+        title: const Text('Counter App 💉'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'You have pushed the button this many times:',
             ),
             Consumer<CounterChangeNotifier>(
@@ -36,7 +38,7 @@ class _CounterPageState extends State<CounterPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: Provider.of<CounterChangeNotifier>(context).increment,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

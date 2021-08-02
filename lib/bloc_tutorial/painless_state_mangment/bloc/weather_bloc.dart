@@ -22,7 +22,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   Future<Weather> _fetchWeatherFromFakeApi(String cityName) {
     // Simulate network delay
     return Future.delayed(
-      Duration(seconds: 1),
+      const Duration(seconds: 1),
       () {
         return Weather(
           cityName: cityName,

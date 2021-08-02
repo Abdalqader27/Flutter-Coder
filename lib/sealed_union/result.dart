@@ -5,7 +5,7 @@ import 'package:sealed_unions/union_3.dart';
 class Result extends Union3Impl<_Init, _Loading, _Loaded> {
   Result._(Union3<_Init, _Loading, _Loaded> union) : super(union);
 
-  static final _factory = const Triplet<_Init, _Loading, _Loaded>();
+  static const _factory = Triplet<_Init, _Loading, _Loaded>();
 
   factory Result.init() => Result._(_factory.first(_Init()));
 

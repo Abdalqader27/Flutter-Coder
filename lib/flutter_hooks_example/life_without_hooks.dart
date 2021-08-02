@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Let's Scroll"),
+          title: const Text("Let's Scroll"),
         ),
         floatingActionButton: FadeTransition(
           opacity: _hideFabAnimController,
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         body: ListView(
           controller: _scrollController,
-          children: List.generate(5, (index) => Card(child: FittedBox(child: FlutterLogo()))),
+          children: List.generate(5, (index) => const Card(child: FittedBox(child: FlutterLogo()))),
         ));
   }
 }

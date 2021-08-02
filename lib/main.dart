@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'bloc_tutorial/painless_state_mangment/weather_page.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: WeatherPage(),
   ));
 }

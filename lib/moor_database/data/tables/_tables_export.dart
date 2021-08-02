@@ -1,0 +1,1 @@
+export '../tables/task.dart';

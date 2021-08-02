@@ -19,7 +19,7 @@ void main() {
   } else if (union is Error) {
     debugPrint("Error");
   } else {
-    debugPrint("value : ${union}");
+    debugPrint("value : $union");
   }
 
   var model = Model.first('42');

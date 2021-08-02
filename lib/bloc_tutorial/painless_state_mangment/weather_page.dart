@@ -4,8 +4,9 @@ import 'bloc/bloc.dart';
 import 'model/weather.dart';
 
 class WeatherPage extends StatefulWidget {
-  WeatherPage({Key? key}) : super(key: key);
+  const WeatherPage({Key? key}) : super(key: key);
 
+  @override
   _WeatherPageState createState() => _WeatherPageState();
 }
 
@@ -16,7 +17,7 @@ class _WeatherPageState extends State<WeatherPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Fake Weather App"),
+        title: const Text("Fake Weather App"),
       ),
       body: BlocListener(
         bloc: weatherBloc,
@@ -24,7 +25,7 @@ class _WeatherPageState extends State<WeatherPage> {
         // It is guaranteed to run only once per state change.
         listener: (BuildContext context, WeatherState state) {
           if (state is WeatherLoaded) {
-            print("Loaded: ${state.weather.cityName}");
+            debugPrint("Loaded: ${state.weather.cityName}");
           }
         },
         // BlocBuilder invokes the builder when new state is emitted.
@@ -49,13 +50,13 @@ class _WeatherPageState extends State<WeatherPage> {
   }
 
   Widget buildInitialInput() {
-    return Center(
+    return const Center(
       child: CityInputField(),
     );
   }
 
   Widget buildLoading() {
-    return Center(
+    return const Center(
       child: CircularProgressIndicator(),
     );
   }
@@ -67,7 +68,7 @@ class _WeatherPageState extends State<WeatherPage> {
       children: <Widget>[
         Text(
           weather.cityName,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 40,
             fontWeight: FontWeight.w700,
           ),
@@ -75,9 +76,9 @@ class _WeatherPageState extends State<WeatherPage> {
         Text(
           // Display the temperature with 1 decimal place
           "${weather.temperature.toStringAsFixed(1)} °C",
-          style: TextStyle(fontSize: 80),
+          style: const TextStyle(fontSize: 80),
         ),
-        CityInputField(),
+        const CityInputField(),
       ],
     );
   }
@@ -110,7 +111,7 @@ class _CityInputFieldState extends State<CityInputField> {
         decoration: InputDecoration(
           hintText: "Enter a city",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-          suffixIcon: Icon(Icons.search),
+          suffixIcon: const Icon(Icons.search),
         ),
       ),
     );
