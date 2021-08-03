@@ -41,7 +41,7 @@ class _NewTaskInputState extends State<NewTaskInput> {
         controller: controller,
         decoration: const InputDecoration(hintText: 'Task Name'),
         onSubmitted: (inputName) {
-          final database = Provider.of<AppDatabase>(context);
+          final database = Provider.of<AppDatabase>(context, listen: false);
           final task = TaskData(
             name: inputName,
             date: newTaskDate,
