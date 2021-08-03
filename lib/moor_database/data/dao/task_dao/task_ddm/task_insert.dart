@@ -7,7 +7,7 @@ class TaskInserting extends DatabaseAccessor<AppDatabase> with IInsert<TaskData>
   TaskInserting(AppDatabase attachedDatabase) : super(attachedDatabase);
 
   @override
-  Future insertItem(TaskData data) {
+  Future insertItem(Insertable<TaskData> data) {
     return into(db.task).insert(data);
   }
 

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:futter_coder/moor_database/data/moor_database.dart';
 import 'package:provider/provider.dart';
 
+import '../data/dao/task_dao/task_dao.dart';
+
 class NewTaskInput extends StatefulWidget {
   const NewTaskInput({
     Key? key,
@@ -41,13 +43,13 @@ class _NewTaskInputState extends State<NewTaskInput> {
         controller: controller,
         decoration: const InputDecoration(hintText: 'Task Name'),
         onSubmitted: (inputName) {
-          final database = Provider.of<AppDatabase>(context, listen: false);
+          final dao = Provider.of<TaskDao>(context, listen: false);
           final task = TaskData(
             name: inputName,
             date: newTaskDate,
             completed: false,
           );
-          database.taskDao.inserting.insertItem(task);
+          dao.inserting.insertItem(task);
           resetValuesAfterSubmit();
         },
       ),

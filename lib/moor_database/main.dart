@@ -8,7 +8,7 @@ import 'page/home_page.dart';
 void main() {
   runApp(MaterialApp(
     home: Provider(
-      create: (BuildContext context) => AppDatabase(),
+      create: (BuildContext context) => AppDatabase().taskDao,
       child: const HomePage(),
     ),
   ));

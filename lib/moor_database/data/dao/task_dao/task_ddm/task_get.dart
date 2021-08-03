@@ -8,7 +8,12 @@ class TaskGetting extends DatabaseAccessor<AppDatabase> implements IGet<TaskData
 
   @override
   Future<List<TaskData>?> getAll() {
-    return (select(db.task).get());
+    return (select(db.task)
+          ..orderBy([
+            (t) => OrderingTerm(expression: t.date, mode: OrderingMode.desc),
+            (t) => OrderingTerm(expression: t.name, mode: OrderingMode.desc),
+          ]))
+        .get();
   }
 
   @override
@@ -37,6 +42,16 @@ class TaskGetting extends DatabaseAccessor<AppDatabase> implements IGet<TaskData
   @override
   Stream<List<TaskData>> watchAll() {
     return (select(db.task).watch());
+  }
+
+  Stream<List<TaskData>> watchAllCompleted() {
+    return (select(db.task)
+          ..orderBy([
+            (t) => OrderingTerm(expression: t.date),
+            (t) => OrderingTerm(expression: t.name),
+          ])
+          ..where((tbl) => tbl.completed.equals(true)))
+        .watch();
   }
 
   @override
