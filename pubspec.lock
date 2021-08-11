@@ -465,7 +465,7 @@ packages:
     source: hosted
     version: "5.0.13"
   moor:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: moor
       url: "https://pub.dartlang.org"

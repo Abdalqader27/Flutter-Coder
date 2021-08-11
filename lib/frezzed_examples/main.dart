@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:futter_coder/frezzed_examples/person_example/person.dart';
 
 import 'frezzed_classes.dart';
 import 'model_example/model.dart';
+import 'person_example/person.dart';
 
 void main() {
   ///  m1
