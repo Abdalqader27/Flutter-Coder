@@ -26,7 +26,7 @@ class _ELLocationBuilderState extends State<ELLocationBuilder> {
             return noLocationWidget(context: context);
           }
           return StreamBuilder(
-              stream: location.requestPermission().asStream(),
+              stream: requestPermissionStream,
               builder: (_, requestPermission) {
                 if (requestPermission.data == null) {
                   return loading();
@@ -35,7 +35,7 @@ class _ELLocationBuilderState extends State<ELLocationBuilder> {
                     return noLocationWidget(context: context);
                   }
                   return StreamBuilder<LocationData?>(
-                      stream: location.getLocation().asStream(),
+                      stream: getLocation,
                       builder: (context, loc) {
                         if (loc.hasData && loc.data == null) {
                           return noLocationWidget(context: context);
@@ -56,7 +56,7 @@ class _ELLocationBuilderState extends State<ELLocationBuilder> {
 
   Widget checkPermission({dynamic data, required Widget child}) {
     if (data == null) {
-      return const CircularProgressIndicator();
+      return loading();
     } else if (data != PermissionStatus.granted) {
       return noLocationWidget(context: context);
     }
@@ -110,11 +110,9 @@ class _ELLocationBuilderState extends State<ELLocationBuilder> {
       children: [
         const Icon(Icons.location_on_outlined, size: 38),
         Container(
-            padding: const EdgeInsets.all(8.0),
-            child: const Text(
-              "Please open location  ",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-            )),
+          padding: const EdgeInsets.all(8.0),
+          child: const Text("Please open location  ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+        ),
         openLocationButton(context: context)
       ],
     ));
