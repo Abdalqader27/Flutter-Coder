@@ -1,4 +1,4 @@
-import 'el_location.dart';
+import 'src/el_location.dart';
 
 Location location = Location();
 

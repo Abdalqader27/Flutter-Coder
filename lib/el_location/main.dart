@@ -13,11 +13,7 @@ class ExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ELLocationBuilder(builder: (
-        BuildContext context,
-        dynamic location,
-        Widget? child,
-      ) {
+      body: ELLocationBuilder(builder: (BuildContext context, dynamic location, Widget? child) {
         LocationData data = location;
         String lat = data.latitude.toString();
         String lag = data.longitude.toString();
