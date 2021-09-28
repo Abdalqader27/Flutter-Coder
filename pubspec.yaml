@@ -32,6 +32,7 @@ dependencies:
 #    git:
 #      url: https://github.com/Abdalqader27/super_enum.git
 #      ref: "0.7.0"
+  bloc: ^7.2.0
 
 
 
@@ -50,9 +51,12 @@ dependencies:
   get: ^4.3.4
   get_storage:
 #  flutter_colorpicker: ^0.5.0
+  retrofit: any
 
   sembast: ^3.1.0+2
   path_provider: ^2.0.2
+  google_maps_flutter: ^2.0.10
+  location: ^4.2.0
 
 
 dev_dependencies:
@@ -70,6 +74,8 @@ dev_dependencies:
   freezed:
   flutter_lints: ^1.0.4
   json_serializable:
+  retrofit_generator: any
+
 flutter:
 
   uses-material-design: true
