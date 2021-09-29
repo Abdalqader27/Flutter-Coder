@@ -4,7 +4,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'route_model.dart';
 
 class MapModels {
-  Map<PolylineId, Polyline>? polyline;
+  Map<PolylineId, Polyline> polyline;
 
   Set<Marker> allMarkers;
   Set<Marker> currentMarkers;

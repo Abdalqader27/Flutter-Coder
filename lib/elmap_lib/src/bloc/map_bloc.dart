@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:futter_coder/elmap_lib/src/models/map_models.dart';
 import 'package:futter_coder/elmap_lib/src/models/route_model.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -11,9 +12,14 @@ part 'map_state.dart';
 
 class MapBloc extends Bloc<MapEvent, MapState> with MapInterface {
   late GoogleMapController controller;
+  final MapModels mapModels = MapModels();
 
   MapBloc() : super(MapInitial()) {
-    on<MapEvent>((event, emit) {});
+    on<MapEvent>((event, emit) {
+      if (event is MapEvent) {
+        emit(MapInitial());
+      }
+    });
   }
 
   @override

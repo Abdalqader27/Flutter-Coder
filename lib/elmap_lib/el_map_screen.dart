@@ -22,20 +22,23 @@ class ElMapScreen extends StatelessWidget {
         final LocationData currentLocation = data;
         final LatLng currentLatLag = LatLng(currentLocation.latitude!, currentLocation.longitude!);
 
-        ///Providing Bloc instance
+        ///Providing Bloc instance for hot reload process
         return BlocProvider(
           create: (context) => _bloc,
           child: BlocBuilder<MapBloc, MapState>(
             builder: (context, state) {
               ///View model providing reading from Bloc
-              final viewModel = context.read<MapBloc>();
+              final readBloc = context.read<MapBloc>();
+              final mapModel = readBloc.mapModels;
 
               return Stack(
                 children: [
                   GoogleMap(
-                    onMapCreated: (controller) => viewModel.controller = controller,
+                    onMapCreated: (controller) => readBloc.controller = controller,
                     initialCameraPosition: initialCameraPosition ?? CameraPosition(target: currentLatLag, zoom: 20),
                     onTap: onMapTap,
+                    markers: mapModel.currentMarkers,
+                    polylines: Set.of(mapModel.polyline.values),
                   ),
                 ],
               );
