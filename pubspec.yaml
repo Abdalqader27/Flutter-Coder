@@ -75,6 +75,8 @@ dev_dependencies:
   freezed:
   flutter_lints: ^1.0.4
   json_serializable:
+  test: any
+
   retrofit_generator: any
 
 flutter:
