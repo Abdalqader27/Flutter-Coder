@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'el_map_screen.dart';
+
 void main() {
   runApp(const MaterialApp(home: App()));
 }
@@ -10,6 +12,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(body: ElMapScreen());
   }
 }
