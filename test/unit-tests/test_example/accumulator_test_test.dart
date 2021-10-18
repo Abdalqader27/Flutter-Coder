@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:futter_coder/test_example/accumlator.dart';
-
+int x=9;
 void main() {
   late Accumulator accumulator;
 
